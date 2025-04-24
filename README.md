@@ -4,7 +4,6 @@ The Yangshengtong APP combines the health-preserving culture in the classics of 
 
 
 # HealthPassage Mobile Innovation Project
-[https://via.placeholder.com/150]
 
 ## Project Introduction
 
