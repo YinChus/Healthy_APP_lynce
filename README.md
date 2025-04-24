@@ -1,4 +1,4 @@
-# Healthy_APP_lynce
+# Healthy_APP_lynce https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 It's about the IOS APP
 The Yangshengtong APP combines the health-preserving culture in the classics of Chinese medicine, such as the Yellow Emperor's Internal Classic and the Compendium of Materia Medica, to deeply decipher the essence and long history of Chinese medicine health preservation, give the precautions in the four seasons, including the four seasons solar term and the twelve hours solar term, provide health preserving auxiliary activities and daily suggestions for physique, and interpret the related diet, acupoint guidance, acupuncture and moxibustion and massage, disease guidance, symptomatic efficacy of Chinese herbal medicine and traditional Chinese patent medicines and simple preparations, and precautions.
 
