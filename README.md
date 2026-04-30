@@ -5,7 +5,7 @@
 It's about the IOS APP
 The Yangshengtong APP combines the health-preserving culture in the classics of Chinese medicine, such as the Yellow Emperor's Internal Classic and the Compendium of Materia Medica, to deeply decipher the essence and long history of Chinese medicine health preservation, give the precautions in the four seasons, including the four seasons solar term and the twelve hours solar term, provide health preserving auxiliary activities and daily suggestions for physique, and interpret the related diet, acupoint guidance, acupuncture and moxibustion and massage, disease guidance, symptomatic efficacy of Chinese herbal medicine and traditional Chinese patent medicines and simple preparations, and precautions.
 
-！[养生通海报](养生通海报.jpg)
+！[养生通海报](../养生通海报.jpg)
 
 # HealthPassage Mobile Innovation Project
 
