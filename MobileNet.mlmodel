@@ -1,0 +1,71 @@
+//
+//  BreathListView.swift
+//  Wellness
+//
+//  Created by Jianhui Tan on 2023/8/26.
+//
+
+import SwiftUI
+
+struct BreathListView: View {
+    var body: some View {
+        ScrollView{
+            Image("breathBanner")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(10)
+                .padding(.horizontal)
+             
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
+                
+                NavigationLink(destination:BreathView()){
+                    BreathListCard(name: "均等放松呼吸", intro: "增加供养 缓解压力")
+                }
+                
+                BreathListCard(name: "立体放松呼吸", intro: "放松身心 调节情绪")
+                BreathListCard(name: "逆式振奋呼吸", intro: "恢复能量 强身健体")
+                BreathListCard(name: "宁静促眠呼吸", intro: "天然促眠 适合入睡")
+                BreathListCard(name: "强心健肺呼吸", intro: "激活心肺 防止猝死")
+                BreathListCard(name: "脑力激活呼吸", intro: "提神醒脑 意识集中")
+                BreathListCard(name: "瘦身减腹呼吸", intro: "加速代谢 排毒收腹")
+                BreathListCard(name: "养胃美颜呼吸", intro: "调节肠胃 养颜去斑")
+                    
+            }
+            .padding()
+            
+            
+            
+            
+            
+            
+        }
+    }
+}
+
+
+struct BreathListCard: View {
+    let name: String
+    let intro:String
+    var body: some View {
+        VStack{
+            Text(name)
+                .font(.title2)
+                .bold()
+                .padding(.bottom)
+            Text(intro)
+            
+        }
+        .padding()
+        .frame(height:140)
+        .background(ThemeColor.tint)
+        .foregroundColor(.white)
+        .cornerRadius(10)
+        
+    }
+}
+
+struct BreathListView_Previews: PreviewProvider {
+    static var previews: some View {
+        BreathListView()
+    }
+}
