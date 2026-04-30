@@ -7,7 +7,6 @@ The Yangshengtong APP combines the health-preserving culture in the classics of 
 
 ![养生通海报](养生通海报.jpg)
 
-![Design](养生通设计图.ppg)
 
 
 # HealthPassage Mobile Innovation Project
@@ -20,6 +19,7 @@ The Yangshengtong APP combines the health-preserving culture in the classics of 
 
 With the increasing aging population and rising proportion of sub-healthy individuals, public awareness of health has significantly improved. The HealthPassage app actively responds to national policies by empowering TCM services through digital technology and promoting the concept of "preventing diseases before they occur." It aims to enhance TCM health care services and support the development of the health industry.
 
+![Design](养生通设计图.png)
 ## Functional Modules
 
 ### 1. Home Module
