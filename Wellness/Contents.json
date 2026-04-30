@@ -1,0 +1,236 @@
+//
+//  TestList.swift
+//  Wellness
+//
+//  Created by Jianhui Tan on 2023/8/26.
+//
+
+import SwiftUI
+
+struct TestList: View {
+    
+    @ObservedObject var viewModel = QuizViewModel(questions: sampleQuestions)
+    
+    var body: some View {
+        List{
+            ZStack{
+                
+               
+                    if UserDefaults.standard.bool(forKey: "ShowingResults"){
+                        
+                        let transformedScores = viewModel.transformedCategoryScores()
+                        let constitutionTypes = getConstitutionTypes(transformedScores)
+                        let constitudeDetails = createConstitudeDetails(constitutionTypes.first ?? "-")
+                        HStack(alignment:.top){
+                            
+                            VStack{
+                                
+                                HStack{
+                                    Rectangle()
+                                        .foregroundColor(ThemeColor.tint)
+                                        .frame(width: 2, height:20)
+                                    Text("我的体质")
+                                        .font(.title2)
+                                        .bold()
+                                }
+                                
+                                Spacer()
+                                Text("\(constitutionTypes.first!)")
+                                Spacer()
+                                
+                                
+                            }
+                            .padding(.horizontal)
+                            .foregroundColor(ThemeColor.tint)
+                            Spacer(minLength: 0)
+                            Divider()
+                            Spacer(minLength: 0)
+                            let sortedTransformedScores = transformedScores
+                                .filter { $0.key != "平和质" } // Exclude "平和质"
+                                .sorted(by: { $0.key < $1.key }) // Sort by category name
+                            
+                            RadarChartView(data: sortedTransformedScores.map { $0.value },
+                                           categories: sortedTransformedScores.map { $0.key },font: .footnote) // Pass sorted data and categories
+                            .frame(height: 100)
+                            .padding(.vertical,30)
+                        }
+                        
+                    
+                        
+                    }else{
+                        ZStack{
+                            Image("quizBanner")
+                                .resizable()
+                                    .scaledToFill()  // 填充整个frame，但可能会裁剪
+                                    .frame(height: 200)
+                                    .clipped()  // 确保图片不超出框架
+                                    .cornerRadius(10)
+                                    .padding(.trailing,-16)
+                                    .padding(.vertical,-18)
+                            VStack(alignment: .trailing){
+                                Spacer()
+                                HStack{
+                                    Spacer()
+                                    Text("点击测试")
+                                        .foregroundColor(ThemeColor.tint)
+                                        .padding(0)
+                                }
+                                .padding(.trailing,6)
+                               
+                            }
+                        }
+                        
+                    }
+                
+                VStack{
+                    Spacer()
+                    NavigationLink(destination:QuizView(viewModel: viewModel)
+                        .navigationBarTitleDisplayMode(.inline)){
+                            
+                        }
+                }
+                }
+            .padding(.vertical,6)
+            .padding(.leading,-16)
+            
+            Section{
+                ZStack{
+                    VStack{
+                        Spacer()
+                        NavigationLink(destination: IntestineView()){
+                            
+                        }
+                        .padding(.bottom)
+                    }
+                    
+                    TestListCard(title: "肠道功能自测", intro: "肠道需要常好", number: 26, imageName: "intestine")
+                }
+            }
+                
+                Section{
+                    ZStack{
+                        VStack{
+                            Spacer()
+                            NavigationLink(destination: EmptyView()){
+                                
+                            }
+                            .padding(.bottom)
+                        }
+                        
+                        TestListCard(title: "亚健康状态自测", intro: "预防亚健康，防大病", number: 16, imageName: "subhealth")
+                    }
+                }
+                   
+                    Section{
+                        ZStack{
+                            VStack{
+                                Spacer()
+                                NavigationLink(destination: EmptyView()){
+                                    
+                                }
+                                .padding(.bottom)
+                            }
+                            
+                            TestListCard(title: "女性更年期指数", intro: "更年期到来先知晓", number: 21, imageName: "menopause")
+                        }
+                        
+                    }
+                
+                    Section{
+                        ZStack{
+                            VStack{
+                                Spacer()
+                                NavigationLink(destination: EmptyView()){
+                                    
+                                }
+                                .padding(.bottom)
+                            }
+                            
+                            TestListCard(title: "高血压征兆自测", intro: "找对问题，降压更轻松", number: 20, imageName: "bloodPressure")
+                        }
+                        
+                    }
+                
+                Section{
+                    ZStack{
+                        VStack{
+                            Spacer()
+                            NavigationLink(destination: EmptyView()){
+                                
+                            }
+                            .padding(.bottom)
+                        }
+                        
+                        TestListCard(title: "高血脂征兆自测", intro: "防患未然，保护心血管健康", number: 20, imageName: "bloodFat")
+                    }
+                    
+                }
+            
+            
+        }
+        .navigationTitle("体质自测")
+    }
+}
+
+
+
+struct TestListCard: View {
+    
+    let title:String
+    let intro:String
+    let number:Int
+    let imageName:String
+    
+    var body: some View {
+        
+        HStack(alignment:.bottom){
+            Image(imageName)  // 从 Assets 中加载图片
+                .resizable()
+                    .scaledToFill()  // 填充整个frame，但可能会裁剪
+                    .frame(width: 120, height: 120)
+                    .clipped()  // 确保图片不超出框架
+                    .cornerRadius(10)
+            
+            
+            VStack{
+                HStack{
+                    VStack(alignment: .leading,spacing: 10){
+                        Text(title)
+                            .font(.title2)
+                            .bold()
+                        Text(intro)
+                    }
+                    Spacer()
+                }
+                .padding(.bottom)
+                
+                HStack{
+                    Text("共\(number)问")
+                        .padding(8)
+                        .background(ThemeColor.tint.opacity(0.2))
+                        .cornerRadius(20)
+                    
+                    Spacer()
+                    Text("开始测评")
+                        .padding(8)
+                        .background(ThemeColor.tint)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                    
+                }
+                .font(.footnote)
+                
+            }
+        }
+        .padding(.trailing)
+        
+    }
+}
+
+struct TestList_Previews: PreviewProvider {
+    static var previews: some View {
+        TestList()
+    }
+}
+
+

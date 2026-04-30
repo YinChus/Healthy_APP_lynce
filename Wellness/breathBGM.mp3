@@ -1,0 +1,192 @@
+//
+//  IntestineView.swift
+//  Wellness
+//
+//  Created by Jianhui Tan on 2023/8/27.
+//
+
+import Foundation
+import SwiftUI
+
+
+
+
+
+
+
+struct IntestineView_Previews: PreviewProvider {
+    static var previews: some View {
+        IntestineView()
+    }
+}
+
+
+
+struct IntestineQuestion {
+    var text: String
+    var answer: Bool? = nil
+}
+
+struct IntestineView: View {
+    @State private var questions: [IntestineQuestion] = [
+        IntestineQuestion(text: "经常不吃早餐"),
+        IntestineQuestion(text: "喜欢吃高脂高热的“垃圾食品”"),
+        IntestineQuestion(text: "喜欢吃肉，不喜欢吃蔬菜"),
+        IntestineQuestion(text: "常常不吃米饭等主食"),
+        IntestineQuestion(text: "不怎么吃薯类、豆类、海藻类"),
+        IntestineQuestion(text: "不注意食品卫生（如经常吃快变质的食品，或者卫生条件差）"),
+        IntestineQuestion(text: "很少运动"),
+        IntestineQuestion(text: "精神压力大，容易紧张、烦躁"),
+        IntestineQuestion(text: "经常熬夜"),
+        IntestineQuestion(text: "容易便秘、蹲厕时间长"),
+        IntestineQuestion(text: "经常憋大便"),
+        IntestineQuestion(text: "经常腹泻"),
+        IntestineQuestion(text: "大便不健康（如：大便干硬，有恶臭，带粘血，深红色）"),
+        IntestineQuestion(text: "长期使用抗生素"),
+        IntestineQuestion(text: "减肥不当（如使用含泻药成分的通便排毒产品）"),
+        IntestineQuestion(text: "皮肤粗糙或脸色差"),
+        IntestineQuestion(text: "有口臭"),
+        IntestineQuestion(text: "经常放很臭的屁"),
+        IntestineQuestion(text: "喜欢吃肉，不喜欢吃蔬菜"),
+        IntestineQuestion(text: "皮肤粗糙或脸色差"),
+        IntestineQuestion(text: "减肥不当（如使用含泻药成分的通便排毒产品）"),
+        IntestineQuestion(text: "经常放很臭的屁")
+        // ... 其他问题
+    ]
+    @State private var currentQuestionIndex: Int = 0
+    @State private var showingResults: Bool = false
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 20) {
+                Text(questions[currentQuestionIndex].text)
+                    .font(.title)
+                
+                HStack(spacing: 40) {
+                    Button{
+                        questions[currentQuestionIndex].answer = true
+                        nextQuestionOrSubmit()
+                    }label: {
+                        
+                        HStack{
+                            Spacer()
+                            Text("是")
+                            Spacer()
+                        }
+                        .foregroundColor(ThemeColor.tint)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                .stroke()
+                                .foregroundColor(ThemeColor.tint)
+                            )
+                    }
+                    Button{
+                        questions[currentQuestionIndex].answer = false
+                        nextQuestionOrSubmit()
+                    }label: {
+                        HStack{
+                            Spacer()
+                            Text("否")
+                            Spacer()
+                        }
+                        .foregroundColor(ThemeColor.tint)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                .stroke()
+                                .foregroundColor(ThemeColor.tint)
+                            )
+                    }
+                }
+                Spacer()
+            }
+            .padding()
+            .sheet(isPresented: $showingResults) {
+                
+                
+                IntestineResultsView(count: questions.compactMap { $0.answer }.filter { $0 }.count)
+                
+                
+            }
+            .navigationBarTitle("问题 \(currentQuestionIndex + 1) / \(questions.count)", displayMode: .inline)
+        }
+    }
+    
+    func nextQuestionOrSubmit() {
+        if currentQuestionIndex < questions.count - 1 {
+            currentQuestionIndex += 1
+        } else {
+            showingResults = true
+        }
+    }
+}
+
+struct IntestineResultsView: View {
+    var count: Int
+    
+    var body: some View {
+        VStack {
+            ScrollView{
+                
+                VStack{
+                    
+                    
+                    Text(resultText)
+                        .padding()
+                        .bold()
+                        .padding(.bottom)
+                    
+                    HStack{
+                        Text("注意事项")
+                            .font(.title3)
+                            .bold()
+                            .padding(.bottom)
+                        Spacer()
+                    }
+                    
+                    
+                    Text("""
+清淡饮食
+晚饭不能吃得过饱，以清淡容易消化为主，避免吃高油腻的食物，不然会增加胃肠的负担，从而扰乱了胃肠道正常的休整。多吃新鲜的蔬菜和水果，帮助排出肠道里面食物残渣。
+
+摄取膳食纤维
+如果身体没有得到足够的膳食纤维会减慢排便的速度，导致胃肠道蠕动不足，甚至会增加癌变的可能。只要每天摄入25克膳食纤维就能够满足身体所需要的，帮助清理肠道中的垃圾，让肠道中的菌群处于平衡状态，防止发生便秘。
+
+细嚼慢咽
+细嚼慢咽的过程中，不仅能够让身体吸收里面的营养元素，同时也刺激唾液和消化液分泌,帮助食物的消化以及吸收,防止滞留在胃肠道里面的食物发生恶臭味道，防止出现便秘或者腹泻。
+
+坚持锻炼身体
+适当的运动能够促进胃肠道蠕动，加快了粪便排出体外，防止胃肠道出现老化。
+
+规律排便
+保持肠道健康需要养成规律良好的排便习惯，每天固定的时间上厕所可以让身体适应，肠道蠕动速度快，排便条件反射建立，可以每天有- -到两次的粪便排泄，粪便排泄规律时肠道轻松，不会因为代谢废物累积影响肠道健康。
+
+腹部按摩
+餐后经常进行腹部按摩,促进肠道蠕动,防止胃部疾病的发生。双手搓热，重叠置于小腹上，用些力气在小腹上顺时针转36圈，再逆时针转36圈，达到促进肠道蠕动。
+
+足量饮水
+每天摄取足量水份.肠道消化也是需要大量水份的，如果不摄入水份，便便会比较干燥。所以每天足量的水份摄入，不仅是肠道健康的保证，也是身体健康的需求。
+
+补充肠道益生菌
+我们经常喝的酸奶里面就含有丰富的肠道益生菌，肠道里的有益菌群多了，可以打败有害的菌群，维护肠道里的和平和稳定。
+""")
+                }
+                .padding()
+            }
+            
+        }
+        
+    }
+    
+    var resultText: String {
+        switch count {
+        case 0...4:
+            return "恭喜您！您的肠胃状况很好！请保持好的生活习惯。"
+        case 5...12:
+            return "请注意了!您已经出现肠道问题了！"
+        default:
+            return "您的肠胃问题已经相当严重了！请赶快采取措施！"
+        }
+    }
+}
