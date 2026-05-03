@@ -1,5 +1,6 @@
 # Healthy_APP_yangshengtong Intro: https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-# Healthy_APP_Bodytest：http://81.68.91.89:5000/
+# Healthy_APP_Bodytest：http://tjzhwl.com.cn:5000
+
 
 
 It's about the IOS APP
