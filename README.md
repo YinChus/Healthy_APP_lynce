@@ -6,8 +6,6 @@ The Yangshengtong APP combines the health-preserving culture in the classics of 
 ## Healthy_APP_yangshengtong Intro: https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ## Healthy_APP_Bodytest：http://tjzhwl.com.cn:5000
 
-![APP演示视频](APP简介_20230809_08132593.mp4)
-
 # HealthPassage Mobile Innovation Project
 
 ## Project Introduction
@@ -67,6 +65,7 @@ With the increasing aging population and rising proportion of sub-healthy indivi
 2. **Registration and Login**: Create a personal account and complete your health profile.
 3. **Using Features**: Choose health modules based on your needs to receive personalized suggestions.
 4. **Feedback and Suggestions**: Provide feedback or suggestions through the in-app feedback channels.
+![APP演示视频](APP简介_20230809_08132593.mp4)
 ![养生通海报](养生通海报.jpg)
 ## Contributing to the Project
 
