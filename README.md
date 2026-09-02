@@ -2,8 +2,7 @@
 It's about the IOS APP
 The Yangshengtong APP combines the health-preserving culture in the classics of Chinese medicine, such as the Yellow Emperor's Internal Classic and the Compendium of Materia Medica, to deeply decipher the essence and long history of Chinese medicine health preservation, give the precautions in the four seasons, including the four seasons solar term and the twelve hours solar term, provide health preserving auxiliary activities and daily suggestions for physique, and interpret the related diet, acupoint guidance, acupuncture and moxibustion and massage, disease guidance, symptomatic efficacy of Chinese herbal medicine and traditional Chinese patent medicines and simple preparations, and precautions.
 
-![养生通海报](养生通海报.jpg)
-
+![养生通设计图](养生通设计图1.png)
 # Healthy_APP_yangshengtong Intro: https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 # Healthy_APP_Bodytest：http://tjzhwl.com.cn:5000
 
@@ -19,7 +18,7 @@ The Yangshengtong APP combines the health-preserving culture in the classics of 
 
 With the increasing aging population and rising proportion of sub-healthy individuals, public awareness of health has significantly improved. The HealthPassage app actively responds to national policies by empowering TCM services through digital technology and promoting the concept of "preventing diseases before they occur." It aims to enhance TCM health care services and support the development of the health industry.
 
-![养生通设计图](养生通设计图1.png)
+
 ## Functional Modules
 
 ### 1. Home Module
@@ -68,7 +67,7 @@ With the increasing aging population and rising proportion of sub-healthy indivi
 2. **Registration and Login**: Create a personal account and complete your health profile.
 3. **Using Features**: Choose health modules based on your needs to receive personalized suggestions.
 4. **Feedback and Suggestions**: Provide feedback or suggestions through the in-app feedback channels.
-
+![养生通海报](养生通海报.jpg)
 ## Contributing to the Project
 
 We welcome suggestions for improvement and contributions to the HealthPassage project. You can participate in the following ways:
