@@ -1,16 +1,13 @@
-# Healthy_APP_yangshengtong Intro: https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-# Healthy_APP_Bodytest：http://tjzhwl.com.cn:5000
-
-![APP演示视频](APP简介_20230809_08132593.mp4)
-
-
 
 It's about the IOS APP
 The Yangshengtong APP combines the health-preserving culture in the classics of Chinese medicine, such as the Yellow Emperor's Internal Classic and the Compendium of Materia Medica, to deeply decipher the essence and long history of Chinese medicine health preservation, give the precautions in the four seasons, including the four seasons solar term and the twelve hours solar term, provide health preserving auxiliary activities and daily suggestions for physique, and interpret the related diet, acupoint guidance, acupuncture and moxibustion and massage, disease guidance, symptomatic efficacy of Chinese herbal medicine and traditional Chinese patent medicines and simple preparations, and precautions.
 
 ![养生通海报](养生通海报.jpg)
 
+# Healthy_APP_yangshengtong Intro: https://www.canva.cn/design/DAGlhV_ZP28/tH3ENxw9DfgHsBuWTs5SFg/edit?utm_content=DAGlhV_ZP28&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+# Healthy_APP_Bodytest：http://tjzhwl.com.cn:5000
 
+![APP演示视频](APP简介_20230809_08132593.mp4)
 
 # HealthPassage Mobile Innovation Project
 
@@ -84,6 +81,5 @@ We welcome suggestions for improvement and contributions to the HealthPassage pr
 - **Project Leader**: [Lynce]
 - **Email**: [yinchusheng@gmail.com]
 
----
 
-希望这个英文版的 `README.md` 文件能满足你的需求！如果有任何需要调整的地方，请随时告诉我。
+
